@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --dark: hsl(238, 29%, 16%);
+    --red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --grayish: hsl(237, 12%, 33%);
+    --darkblue: hsl(240, 6%, 50%);
+}
+body{
+    background: linear-gradient(   hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--dark);
+    font-size: 12px;
+}
+.wrapper{
+    margin: 147px auto;
+    width: 90%;
+    border-radius: 15px;
+    background: white;
+    padding-bottom: 40px;
+}
+/*IMAGE*/
+.floating1{
+    position: absolute;
+    top: 40px;
+    left:auto;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+}
+.floating2{
+    display: none;
+}
+/*BLANK*/
+.blank{
+    height: 120px;
+}
+/*TEXT*/
+.text{
+    padding: 0 25px;
+}
+h1{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.3em;
+    font-weight:600;
+    background: white;
+}
+.titles{
+    padding: 0 20px;
+}
+input{
+    display: none;
+}
+label {
+    background: white;
+    display: block;    
+    padding: 15px 0;
+    cursor: pointer;
+    transition: ease .5s;
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    color: var(--grayish);
+    font-size: 1.1em;
+}
+label:hover{
+    color: var(--red);
+}
+input:checked + label {
+    font-weight: 600;
+    border-bottom: none;
+    transition: ease .3s;
+    padding: 8px 0; 
+}
+input:checked + label img{
+    transition: ease .3s;
+    transform: rotate(180deg);
+}
+.content {
+    border-bottom: hsl(240, 5%, 91%) 1px solid;
+    padding: 10px 30px 10px 0;
+    font-size: .9em;
+    line-height: 1.5;
+    color: var(--darkblue);
+}
+input + label + .content {
+    display: none;
+}
+input:checked + label + .content {
+    display: block;
+}
+label img{
+    float: right;
+}
+@media screen and (min-width:425px){
+    body{
+    }
+    .wrapper{
+        margin: 140px auto;
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        width: 70%;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-position: -570px -300px;
+        padding-bottom: 0;
+        background-repeat: no-repeat;
+    }
+    .text{
+        text-align: left;
+        padding-bottom: 50px;
+    }
+    .text h1{
+        padding: 60px 0 20px 0;
+        text-align: left;
+    }
+    .blank{
+        display: none;
+    }
+    .floating1{
+        display: none;
+    }
+    .floating2{
+        width: 110%;
+        display: block;
+        background-image: url(../images/illustration-woman-online-desktop.svg);
+        background-position: -75px 50px;
+        background-repeat: no-repeat;
+    }
+    .floating2 img{
+        position: absolute;
+        top: 315px;
+        left: 90px;
+    }
+    .content{
+        padding-right: 70px;
+    }
+    label:hover + .floating2 img{
+        translate: -20px;
+    }
+}
